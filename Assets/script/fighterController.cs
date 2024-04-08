@@ -9,11 +9,13 @@ public class fighterController : MonoBehaviour
     Vector3 pos1;
     [SerializeField]
     float Speed = 2.0f;
-    [SerializeField]
-    float SP = 0.025f;
+    public GameObject PowerUpPrefab;
+    public GameObject explosionPrefab;   //爆発エフェクトのPrefab
+
     // Start is called before the first frame update
     void Start()
     {
+        PowerUpPrefab.SetActive(false);
         //オブジェクトの現在の座標を入手
         //pos1.y = 0;
     }
@@ -101,5 +103,26 @@ public class fighterController : MonoBehaviour
         transform.position = pos1;
 
 
+    }
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.CompareTag("Item"))
+        {
+            PowerUpPrefab.SetActive(true);
+            Invoke("PowerUp", 1.0f);
+            // 爆発エフェクトを生成する	
+            //Instantiate(PowerUpPrefab, transform.position, Quaternion.identity);
+            Destroy(coll.gameObject);
+        }
+        if (coll.CompareTag("Enemy"))
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Destroy(coll.gameObject);
+        }
+    }
+    void PowerUp()
+    {
+        PowerUpPrefab.SetActive(false);
     }
 }
