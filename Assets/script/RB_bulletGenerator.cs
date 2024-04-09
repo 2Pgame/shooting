@@ -17,7 +17,7 @@ public class RB_bulletGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fighter = GameObject.Find("fighter");
+        fighter = GameObject.Find("fighterprefab");
 
     }
 

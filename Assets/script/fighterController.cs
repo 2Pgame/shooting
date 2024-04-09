@@ -9,13 +9,18 @@ public class fighterController : MonoBehaviour
     Vector3 pos1;
     [SerializeField]
     float Speed = 2.0f;
+    [SerializeField]CircleCollider2D circleCollider;
+    [SerializeField] float cooldown = 6.0f;
     public GameObject PowerUpPrefab;
-    public GameObject explosionPrefab;   //爆発エフェクトのPrefab
+    public GameObject explosionPrefab;
+    public GameObject fighterPrefab;
+    //爆発エフェクトのPrefab
 
     // Start is called before the first frame update
     void Start()
     {
         PowerUpPrefab.SetActive(false);
+        circleCollider = GetComponent<CircleCollider2D>();
         //オブジェクトの現在の座標を入手
         //pos1.y = 0;
     }
@@ -97,8 +102,8 @@ public class fighterController : MonoBehaviour
         pos1.x = Mathf.Clamp(pos1.x, -8.0f, 8.0f);
 
         //変数「pos」のy軸における座標を毎フレーム毎に「y」の分だけ増加
-        pos1.y += vertical * Time.deltaTime * Speed + 0.1f*Time.deltaTime;
-        pos1.y = Mathf.Clamp(pos1.y, -4.4f+Camera.main.transform.position.y, 4.0f + Camera.main.transform.position.y);
+        pos1.y += vertical * Time.deltaTime * Speed;
+        pos1.y = Mathf.Clamp(pos1.y, -4.4f + Camera.main.transform.position.y, 4.0f + Camera.main.transform.position.y);
 
         transform.position = pos1;
 
@@ -117,9 +122,20 @@ public class fighterController : MonoBehaviour
         if (coll.CompareTag("Enemy"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            fighterPrefab.SetActive(false);
+            circleCollider.enabled = false;
             Destroy(coll.gameObject);
+            Invoke("set", 3);
+            Invoke("barrier", 6);
         }
+    }
+    private void set()
+    {
+        fighterPrefab.SetActive(true);
+    }
+    void barrier()
+    {
+        circleCollider.enabled = true;
     }
     void PowerUp()
     {
