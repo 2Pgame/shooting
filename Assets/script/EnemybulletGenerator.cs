@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemybulletGenerator : MonoBehaviour
 {
     public GameObject enemybullet;
+    public GameObject fighter;
     float span = 1.0f;
     float delta = 0;
     // Start is called before the first frame update
@@ -16,12 +18,19 @@ public class EnemybulletGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if (delta > span)
+        if (fighter.active == false)
         {
-            delta = 0;
-            GameObject EnemyBullet = Instantiate(enemybullet);
+            return;
+        }
+        else if(fighter.active&& enemybullet)
+        {
+            this.delta += Time.deltaTime;
+            if (delta > span)
+            {
+                delta = 0;
+                GameObject EnemyBullet = Instantiate(enemybullet);
 
+            }
         }
     }
 }

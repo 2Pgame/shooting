@@ -128,6 +128,15 @@ public class fighterController : MonoBehaviour
             Invoke("set", 3);
             Invoke("barrier", 6);
         }
+        if (coll.CompareTag("EnemyBullet"))
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            fighterPrefab.SetActive(false);
+            circleCollider.enabled = false;
+            Destroy(coll.gameObject);
+            Invoke("set", 3);
+            Invoke("barrier", 6);
+        }
     }
     private void set()
     {
