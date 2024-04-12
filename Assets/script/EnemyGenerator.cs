@@ -31,7 +31,7 @@ public class EnemyGenerator : MonoBehaviour
             delta = 0;
             GameObject Enemy = Instantiate(Enemyprefab);
             int px = Random.Range(-10, 10);
-            Enemy.transform.position = new Vector3(px, 18.4f, 0);
+            Enemy.transform.position = new Vector3(px, -20.0f, 0);
         }
     }
 }

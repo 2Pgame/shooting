@@ -6,16 +6,20 @@ using UnityEngine;
 public class EnemybulletGenerator : MonoBehaviour
 {
     public GameObject enemybullet;
-    public GameObject fighter;
+
+    GameObject fighter;
     float span = 1.0f;
     float delta = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        fighter = GameObject.Find("fighterprefab");
     }
 
     // Update is called once per frame
+
+
+    [System.Obsolete]
     void Update()
     {
         if (fighter.active == false)
