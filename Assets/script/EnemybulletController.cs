@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class EnemybulletController : MonoBehaviour
 {
     GameObject fighter;
     [SerializeField]GameObject Enemy3;
+    float DieTime = 5;
     //public Transform player; // プレイヤーオブジェクトのTransform
     public float moveSpeed = 5.0f; // 敵の移動速度
                                    // Start is called before the first frame update
@@ -38,5 +40,11 @@ public class EnemybulletController : MonoBehaviour
 
         // プレイヤーに向かって移動
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+        StartCoroutine(DestroyCoroutine());
+    }
+    private IEnumerator DestroyCoroutine()
+    {
+        yield return new WaitForSeconds(DieTime);
+        Destroy(gameObject);
     }
 }
