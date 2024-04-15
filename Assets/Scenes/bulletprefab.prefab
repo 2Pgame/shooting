@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6083039968503835395}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.29, y: -0.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.85453784, w: 0.5193893}
+  m_LocalPosition: {x: 27.236874, y: 2.94, z: 0}
   m_LocalScale: {x: 0.51917, y: 0.51917, z: 0.51917}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e79180fd054d2499d4b61fd379b506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capsle: {fileID: 0}
-  sp: {fileID: 0}
+  capsle: {fileID: 5615288030651657764, guid: 75ed8f83c1454794ea0ea874855e019d, type: 3}
+  enemy: {fileID: 7679570287394448822, guid: a133756cd7689fb4aa9eec38f4ad66bf, type: 3}
   moveSpeed: 5

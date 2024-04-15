@@ -8,11 +8,15 @@ public class Samplebullet : MonoBehaviour
     [SerializeField] GameObject enemy;
     public float moveSpeed = 5.0f; // 敵の移動速度
     // Start is called before the first frame update
-    void Start()
+    public void initialize(Vector3 initialPosition)
     {
-        transform.position = enemy.transform.position;
-        // 対象物へのベクトルを算出
-        Vector3 toDirection = capsle.transform.position - enemy.transform.position;
+        transform.position = initialPosition;
+    }
+    private void Start()
+    {
+        
+    // 対象物へのベクトルを算出
+    Vector3 toDirection = capsle.transform.position - transform.position;
         // 対象物へ回転する
         transform.rotation = Quaternion.FromToRotation(Vector3.up, toDirection);
     }

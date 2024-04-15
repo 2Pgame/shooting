@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 64597772300003301}
   - component: {fileID: 1718576045031074646}
   - component: {fileID: 1199783444998940497}
-  - component: {fileID: 7301070179674637122}
+  - component: {fileID: -1740811402877802422}
   m_Layer: 0
   m_Name: enemyprefab
   m_TagString: Untagged
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fdbda29044bf94ab15d0c58a479a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7301070179674637122
+  speed: 4
+--- !u!114 &-1740811402877802422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,6 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7679570287394448822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6648d0ef547625f42a7e71318c8978c8, type: 3}
+  m_Script: {fileID: 11500000, guid: f05d9dd743380674bbfa6376364bf8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemybullet: {fileID: 6083039968503835395, guid: 45b2704a1be68704eb0a7a3348d26561, type: 3}
