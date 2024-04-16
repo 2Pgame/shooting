@@ -14,6 +14,9 @@ public class EnemybulletGenerator : MonoBehaviour
     void Start()
     {
         fighter = GameObject.Find("fighterprefab");
+
+            //StartCoroutine(nameof(Generate));
+
     }
 
     // Update is called once per frame
@@ -22,19 +25,28 @@ public class EnemybulletGenerator : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (fighter.active == false)
+        this.delta += Time.deltaTime;
+        if (!fighter)
         {
             return;
         }
-        else if(fighter.active&& enemybullet)
+        else if (fighter.active == true && enemybullet)
         {
-            this.delta += Time.deltaTime;
             if (delta > span)
             {
                 delta = 0;
-                GameObject EnemyBullet = Instantiate(enemybullet);
-
+                GameObject EnemyBullet = Instantiate(enemybullet, transform.position, Quaternion.identity);
+                enemybullet.GetComponent<EnemybulletController>().initialize(transform.position);
+                Debug.Log(transform.position);
             }
         }
     }
+    //private IEnumerator Generate()
+    //{
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(2);
+            
+    //    }
+    //}
 }

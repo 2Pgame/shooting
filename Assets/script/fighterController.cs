@@ -135,7 +135,7 @@ public class fighterController : MonoBehaviour
             circleCollider.enabled = false;
             Destroy(coll.gameObject);
             Invoke("set", 3);
-            Invoke("barrier", 6);
+            Invoke("barrier", cooldown);
         }
     }
     private void set()

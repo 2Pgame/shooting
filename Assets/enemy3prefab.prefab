@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: 100
   fallSpeed: 5
+  explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
 --- !u!114 &1379648380152641811
 MonoBehaviour:
   m_ObjectHideFlags: 0
