@@ -7,6 +7,7 @@ public class Enemy3Move : MonoBehaviour
     public int point = 100;
     public float fallSpeed = 5;
     float DieTime = 5;
+    public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,14 @@ public class Enemy3Move : MonoBehaviour
     {
         yield return new WaitForSeconds(DieTime);
         Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bullet"))
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
     }
 }
