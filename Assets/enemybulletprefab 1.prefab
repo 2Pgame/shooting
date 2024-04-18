@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4953274602825813799}
+  - component: {fileID: -615912069798062812}
   - component: {fileID: 4469367535067013210}
-  - component: {fileID: 1580765095612195323}
   - component: {fileID: 8482801601773230182}
   m_Layer: 0
-  m_Name: enemybulletprefab
+  m_Name: enemybulletprefab 1
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +27,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322527683712756447}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.99540305, w: -0.09577502}
-  m_LocalPosition: {x: 10.558133, y: -24, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8829143, w: -0.4695343}
+  m_LocalPosition: {x: 14.920961, y: -24, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -114.008}
+--- !u!114 &-615912069798062812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322527683712756447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49547a88c9076d4585337e04d3f7d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!212 &4469367535067013210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,20 +99,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1580765095612195323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1322527683712756447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa05eebf3bd126419d0144031b6ab9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy3: {fileID: 1595363632066848250, guid: 3b2dd38a3f92fb74ebef973b533328e7, type: 3}
-  moveSpeed: 5
 --- !u!58 &8482801601773230182
 CircleCollider2D:
   m_ObjectHideFlags: 0
