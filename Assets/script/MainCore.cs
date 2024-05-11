@@ -8,10 +8,11 @@ public class MainCore : MonoBehaviour
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     public GameObject subCore1;
+    public GameObject Boss;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Boss.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class MainCore : MonoBehaviour
             else
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Boss.SetActive(true);
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }
@@ -42,5 +44,7 @@ public class MainCore : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
     }
+
 }
