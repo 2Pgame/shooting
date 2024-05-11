@@ -23,6 +23,10 @@ public class Enemy3Generator : MonoBehaviour
         {
             EnemyExist();
         }
+        if (star.transform.position.y <= -6 && -6.5 <= star.transform.position.y)
+        {
+            EnemyExist();
+        }
 
     }
     void EnemyExist()

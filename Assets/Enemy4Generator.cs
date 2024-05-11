@@ -18,7 +18,7 @@ public class Enemy4Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (star.transform.position.y >= -10)
+        if (star.transform.position.y <= -12 && -14 <= star.transform.position.y)
         {
             time += Time.deltaTime;
             if (time > span)

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy4Move : MonoBehaviour
 {
     [SerializeField] float MoveSpeed = 1.0f;
-GameObject Enemy4Generator;
+    [SerializeField] int Hp = 5;
+    public GameObject explosionPrefab;   //爆発エフェクトのPrefab
+    GameObject Enemy4Generator;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,4 +32,20 @@ GameObject Enemy4Generator;
             transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bullet")) {
+            if (Hp > 0)
+            {
+                Hp--;
+            }
+            else 
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
 }

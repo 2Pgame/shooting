@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using YourCompany.Utilities;
 
 public class fighterController : MonoBehaviour
 {
@@ -11,10 +12,11 @@ public class fighterController : MonoBehaviour
     float Speed = 2.0f;
     [SerializeField]CircleCollider2D circleCollider;
     [SerializeField] float cooldown = 6.0f;
+    [SerializeField] Invincibility invincibility;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
-    //爆発エフェクトのPrefab
+
 
     // Start is called before the first frame update
     void Start()
@@ -115,8 +117,6 @@ public class fighterController : MonoBehaviour
         {
             PowerUpPrefab.SetActive(true);
             Invoke("PowerUp", 1.0f);
-            // 爆発エフェクトを生成する	
-            //Instantiate(PowerUpPrefab, transform.position, Quaternion.identity);
             Destroy(coll.gameObject);
         }
         if (coll.CompareTag("Enemy"))
@@ -125,7 +125,8 @@ public class fighterController : MonoBehaviour
             fighterPrefab.SetActive(false);
             circleCollider.enabled = false;
             Destroy(coll.gameObject);
-            Invoke("set", 3);
+
+            Invoke("Dead", 3);
             Invoke("barrier", 6);
         }
         if (coll.CompareTag("EnemyBullet"))
@@ -134,16 +135,18 @@ public class fighterController : MonoBehaviour
             fighterPrefab.SetActive(false);
             circleCollider.enabled = false;
             Destroy(coll.gameObject);
-            Invoke("set", 3);
+            Invoke("Dead", 3);
             Invoke("barrier", cooldown);
         }
     }
-    private void set()
+    private void Dead()
     {
         fighterPrefab.SetActive(true);
+        invincibility.SetInvincibility();
     }
     void barrier()
     {
+
         circleCollider.enabled = true;
     }
     void PowerUp()

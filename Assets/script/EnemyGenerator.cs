@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (star.transform.position.y <= -7 && -9 <= star.transform.position.y)
+        if (star.transform.position.y <= -8 && -10 <= star.transform.position.y)
         {
             EnemyExist();
         }
