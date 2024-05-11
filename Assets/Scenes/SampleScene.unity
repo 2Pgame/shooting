@@ -9876,6 +9876,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &461963906 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1876964862972129948, guid: 60ff57066beec7e44a6db19a40b12652, type: 3}
+  m_PrefabInstance: {fileID: 659987295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &507282724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2888626228414820367, guid: ee85f6971accc26499ffbbe943a28f91, type: 3}
@@ -10149,7 +10154,7 @@ Transform:
   m_GameObject: {fileID: 879793502}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -6.96, z: 0}
+  m_LocalPosition: {x: -0.4, y: -13.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10247,6 +10252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1259392542}
+  spriteRenderer2: {fileID: 461963906}
   duration: 3
   fadeDuration: 0.1
   <IsInvincible>k__BackingField: 1
