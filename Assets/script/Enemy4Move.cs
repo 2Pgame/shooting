@@ -38,6 +38,7 @@ public class Enemy4Move : MonoBehaviour
             if (Hp > 0)
             {
                 Hp--;
+                Destroy(collision.gameObject);
             }
             else 
             {
