@@ -40,7 +40,7 @@ public class Enemy4Move : MonoBehaviour
             {
                 Hp--;
                 Destroy(collision.gameObject);
-                a = Instantiate(damage, transform.position, Quaternion.identity)as GameObject;
+                a = Instantiate(damage, collision.transform.position, Quaternion.identity)as GameObject;
                 Destroy(a,0.1f);
             }
             else 
