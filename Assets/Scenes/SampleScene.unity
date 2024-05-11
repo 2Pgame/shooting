@@ -10247,6 +10247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1259392542}
+  spriteRenderer2: {fileID: 1478602720}
   duration: 3
   fadeDuration: 0.1
   <IsInvincible>k__BackingField: 1
@@ -10307,6 +10308,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee85f6971accc26499ffbbe943a28f91, type: 3}
+--- !u!212 &1478602720 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1876964862972129948, guid: 60ff57066beec7e44a6db19a40b12652, type: 3}
+  m_PrefabInstance: {fileID: 659987295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958444428
 GameObject:
   m_ObjectHideFlags: 0
