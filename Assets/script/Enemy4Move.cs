@@ -5,13 +5,14 @@ using UnityEngine;
 public class Enemy4Move : MonoBehaviour
 {
     [SerializeField] float MoveSpeed = 1.0f;
-    [SerializeField] int Hp = 5;
+    [SerializeField] int Hp = 2;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
+    public GameObject damage;
     GameObject Enemy4Generator;
+    GameObject a;
     // Start is called before the first frame update
     void Start()
     {
-
         Enemy4Generator = GameObject.Find("enemy4Generator");
         if (Enemy4Generator.GetComponent<Enemy4Generator>().Number == 1)
         {
@@ -38,6 +39,9 @@ public class Enemy4Move : MonoBehaviour
             if (Hp > 0)
             {
                 Hp--;
+                Destroy(collision.gameObject);
+                a = Instantiate(damage, transform.position, Quaternion.identity)as GameObject;
+                Destroy(a,0.1f);
             }
             else 
             {
@@ -47,5 +51,6 @@ public class Enemy4Move : MonoBehaviour
             }
         }
     }
+
 
 }
