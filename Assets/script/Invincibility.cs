@@ -7,7 +7,6 @@ namespace YourCompany.Utilities
     public class Invincibility : MonoBehaviour
     {
         public SpriteRenderer spriteRenderer;
-        public SpriteRenderer spriteRenderer2;
         public float duration = 3.0f;
         public float fadeDuration = 0.1f;
 
@@ -44,11 +43,9 @@ namespace YourCompany.Utilities
             {
                 Debug.Log("test");
                 spriteRenderer.DOFade(0, fadeDuration).SetLoops(2, LoopType.Yoyo);
-                spriteRenderer2.DOFade(0, fadeDuration).SetLoops(2, LoopType.Yoyo);
                 yield return new WaitForSeconds(fadeDuration * 2);
             }
             spriteRenderer.DOFade(1, 0);
-            spriteRenderer2.DOFade(1, 0);
 
             collider2D.enabled = true; // コライダーを再び有効にする
             IsInvincible = false;
