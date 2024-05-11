@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6311631902746933632}
   - component: {fileID: 8885541088705575333}
   - component: {fileID: 705789252241986517}
-  - component: {fileID: -4182705644179781566}
   - component: {fileID: 1608846460860938831}
+  - component: {fileID: 2646619308455103724}
   m_Layer: 0
   m_Name: enemy4prefab
   m_TagString: Untagged
@@ -118,8 +118,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy4: {fileID: 9030626195872310352}
   enemybullet: {fileID: 1322527683712756447, guid: 0fdea92ae5af4c243a43542cafc4a431, type: 3}
---- !u!58 &-4182705644179781566
-CircleCollider2D:
+--- !u!50 &1608846460860938831
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030626195872310352}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &2646619308455103724
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,32 +178,51 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.915
---- !u!50 &1608846460860938831
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030626195872310352}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.83, y: 1.48}
+    newSize: {x: 1.83, y: 1.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.13499999, y: -0.71}
+      - {x: 0.16499999, y: -0.7}
+      - {x: 0.195, y: -0.48}
+      - {x: 0.205, y: -0.26}
+      - {x: 0.16499999, y: -0.099999994}
+      - {x: 0.155, y: 0.04}
+      - {x: 0.295, y: 0.07}
+      - {x: 0.45499998, y: 0.12}
+      - {x: 0.585, y: 0.29}
+      - {x: 0.73499995, y: 0.51}
+      - {x: 0.91499996, y: 0.71999997}
+      - {x: 0.91499996, y: 0.74}
+      - {x: 0.865, y: 0.74}
+      - {x: 0.114999995, y: 0.39999998}
+      - {x: 0.125, y: 0.45999998}
+      - {x: 0.085, y: 0.59}
+      - {x: 0.035, y: 0.63}
+      - {x: -0.024999999, y: 0.63}
+      - {x: -0.065, y: 0.59}
+      - {x: -0.13499999, y: 0.39999998}
+      - {x: -0.195, y: 0.44}
+      - {x: -0.85499996, y: 0.7}
+      - {x: -0.895, y: 0.71}
+      - {x: -0.91499996, y: 0.68}
+      - {x: -0.835, y: 0.59999996}
+      - {x: -0.73499995, y: 0.48999998}
+      - {x: -0.435, y: 0.099999994}
+      - {x: -0.125, y: -0.01}
+      - {x: -0.145, y: -0.19}
+      - {x: -0.145, y: -0.39999998}
+      - {x: -0.105, y: -0.69}
+      - {x: -0.085, y: -0.71}
+      - {x: -0.044999998, y: -0.7}
+      - {x: 0.005, y: -0.55}
+      - {x: 0.105, y: -0.65}
+      - {x: 0.114999995, y: -0.69}
+  m_UseDelaunayMesh: 0
