@@ -9,7 +9,7 @@ public class Enemy4Move : MonoBehaviour
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     GameObject Enemy4Generator;
-    GameObject DamageEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +40,7 @@ public class Enemy4Move : MonoBehaviour
             {
                 Hp--;
                 Destroy(collision.gameObject);
-                DamageEffect = Instantiate(damage, collision.transform.position, Quaternion.identity)as GameObject;
+                GameObject DamageEffect = Instantiate(damage, collision.transform.position, Quaternion.identity)as GameObject;
                 Destroy(DamageEffect,0.1f);
             }
             else 
