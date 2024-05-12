@@ -8,6 +8,7 @@ public class MainCore : MonoBehaviour
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     public GameObject subCore1;
+    public GameObject subCore2;
     public GameObject Boss;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,11 @@ public class MainCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bullet") && subCore1 == null)
+        if (collision.CompareTag("bullet") && subCore1 == null&& subCore2 == null)
         {
             if (Hp > 0)
             {
@@ -40,9 +41,12 @@ public class MainCore : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else 
+        else
         {
-            Destroy(collision.gameObject);
+            if (collision.CompareTag("bullet"))
+            {
+                Destroy(collision.gameObject);
+            }
         }
 
     }
