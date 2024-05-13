@@ -6,6 +6,8 @@ public class Enemy2Controller : MonoBehaviour
 {
     public GameObject explosionPrefab;
     public GameObject powerupPrefab;
+    public int score = 100;
+    [SerializeField]GameSharedData gameSharedData;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Enemy2Controller : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Instantiate(powerupPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            gameSharedData.playerScore += score;
             Destroy(collision.gameObject);
         }
     }
