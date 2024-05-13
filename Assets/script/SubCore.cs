@@ -7,6 +7,7 @@ public class SubCore : MonoBehaviour
     [SerializeField] int Hp = 2;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
+    public GameObject canonfound;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class SubCore : MonoBehaviour
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                Destroy(canonfound);
                 Destroy(collision.gameObject);
             }
         }

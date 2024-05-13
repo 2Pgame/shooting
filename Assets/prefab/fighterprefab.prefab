@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0529da56ecf1142b0b556c294fbbac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  span: 0.1
+  span: 0.3
   pow: 1
   bulletPrefab: {fileID: 4261232143690999646, guid: 14677c3df4ef5ee43988455cd55e0d50, type: 3}
 --- !u!114 &2292870925781399487
@@ -226,8 +226,10 @@ GameObject:
   - component: {fileID: 1926215098075357160}
   - component: {fileID: 646232876666211865}
   - component: {fileID: 6878852254206683764}
+  - component: {fileID: 4527034384828298933}
   - component: {fileID: 5019659505796536723}
   - component: {fileID: 4884849563977554699}
+  - component: {fileID: 5592783342865294811}
   m_Layer: 0
   m_Name: fighterprefab
   m_TagString: Player
@@ -243,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5479672855056201959}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -27.47, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
@@ -317,12 +319,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99735517840717844ba5fda4aa30fccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
-  circleCollider: {fileID: 0}
+  Speed: 2
+  circleCollider: {fileID: 4884849563977554699}
   cooldown: 6
+  invincibility: {fileID: 4527034384828298933}
   PowerUpPrefab: {fileID: 8018582336760354748}
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
   fighterPrefab: {fileID: 5479672855056201959}
+  mainCore: {fileID: 9216756055255797397, guid: 2e3fa6191a06b5e42a860784f75dfc4d, type: 3}
+  Boss: {fileID: 7604497574738376654, guid: 6692a610e91f05044a81919140b3f7fd, type: 3}
+--- !u!114 &4527034384828298933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479672855056201959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1f443effa461145b5d370a39a89a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 646232876666211865}
+  spriteRenderer2: {fileID: 1876964862972129948}
+  duration: 3
+  duration2: 10
+  fadeDuration: 0.1
+  <IsInvincible>k__BackingField: 1
 --- !u!50 &5019659505796536723
 Rigidbody2D:
   serializedVersion: 4
@@ -379,12 +402,33 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.185
+--- !u!95 &5592783342865294811
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479672855056201959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8017189920793250094
 PrefabInstance:
   m_ObjectHideFlags: 0

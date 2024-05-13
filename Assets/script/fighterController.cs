@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using YourCompany.Utilities;
@@ -10,12 +11,14 @@ public class fighterController : MonoBehaviour
     Vector3 pos1;
     [SerializeField]
     float Speed = 2.0f;
-    [SerializeField]CircleCollider2D circleCollider;
+    [SerializeField] CircleCollider2D circleCollider;
     [SerializeField] float cooldown = 6.0f;
     [SerializeField] Invincibility invincibility;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
+    public GameObject mainCore;
+    public GameObject Boss;
 
 
     // Start is called before the first frame update
@@ -105,10 +108,29 @@ public class fighterController : MonoBehaviour
 
         //変数「pos」のy軸における座標を毎フレーム毎に「y」の分だけ増加
         pos1.y += vertical * Time.deltaTime * Speed;
-        pos1.y = Mathf.Clamp(pos1.y, -4.4f + Camera.main.transform.position.y, 4.0f + Camera.main.transform.position.y);
+        if (Boss != null)
+        {
+            pos1.y = Mathf.Clamp(pos1.y, -4.4f + Camera.main.transform.position.y, 4.0f + Camera.main.transform.position.y);
 
-        transform.position = pos1;
+            transform.position = pos1;
 
+        }
+        else
+        {
+
+            pos1.y = Mathf.Clamp(pos1.y, -6f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y); ;
+            Invoke("Move", 3f);
+        }
+        if (mainCore == null)
+        {
+            Debug.Log("終わり");
+            invincibility.SetInvincibility2();
+        }
+        if (fighterPrefab.transform.position.y > -20.0f)
+        {
+            Debug.Log("クリア");
+            Destroy(fighterPrefab);
+        }
 
     }
     void OnTriggerEnter2D(Collider2D coll)
@@ -138,6 +160,14 @@ public class fighterController : MonoBehaviour
             Invoke("Dead", 3);
             Invoke("barrier", cooldown);
         }
+        if (coll.CompareTag("Boss"))
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            fighterPrefab.SetActive(false);
+            circleCollider.enabled = false;
+            Invoke("Dead", 3);
+            Invoke("barrier", cooldown);
+        }
     }
     private void Dead()
     {
@@ -152,5 +182,9 @@ public class fighterController : MonoBehaviour
     void PowerUp()
     {
         PowerUpPrefab.SetActive(false);
+    }
+    void Move()
+    {
+        transform.Translate(0, 3*Time.deltaTime, 0);
     }
 }

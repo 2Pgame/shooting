@@ -6,11 +6,12 @@ public class BossDestroy : MonoBehaviour
 {
 
     public GameObject explosionPrefab;
+    public GameObject Boss;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("BossExplosion", 0f, 0.3f);
+        InvokeRepeating("BossExplosion", 0f, 0.1f);
         // 3秒後に全てのInvokeをキャンセル（止める）
         Invoke("StopRepeating", 3.0f);
     }
@@ -31,5 +32,7 @@ public class BossDestroy : MonoBehaviour
     {
         // 全てのInvokeRepeatingをキャンセル
         CancelInvoke("BossExplosion");
+        Destroy(Boss);
+
     }
 }
