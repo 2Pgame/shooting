@@ -57,7 +57,7 @@ namespace YourCompany.Utilities
         {
             if (spriteRenderer != null && collider2D != null)
             {
-                StartCoroutine(BecomeInvincible(duration, fadeDuration));
+                StartCoroutine(BecomeInvincible2(duration, fadeDuration));
             }
             else
             {
@@ -80,7 +80,7 @@ namespace YourCompany.Utilities
             spriteRenderer.DOFade(1, 0);
             spriteRenderer2.DOFade(1, 0);
 
-            collider2D.enabled = true; // コライダーを再び有効にする
+
             IsInvincible = false;
         }
     }

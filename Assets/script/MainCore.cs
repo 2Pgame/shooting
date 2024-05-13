@@ -10,6 +10,7 @@ public class MainCore : MonoBehaviour
     public GameObject subCore1;
     public GameObject subCore2;
     public GameObject Boss;
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,13 @@ public class MainCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        time += Time.deltaTime;
+        if (time > 60)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Boss.SetActive(true);
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

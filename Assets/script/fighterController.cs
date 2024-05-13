@@ -66,8 +66,9 @@ public class fighterController : MonoBehaviour
         }
         else
         {
+            Debug.Log("‚±‚ê‚ª—~‚µ‚¢");
             pos1.y = Mathf.Clamp(pos1.y, -6f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y);
-            Invoke("Move", 3f);
+            Invoke("LastMove", 3f);
         }
 
         if (mainCore == null)
