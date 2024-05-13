@@ -14,6 +14,7 @@ public class fighterController : MonoBehaviour
     [SerializeField] CircleCollider2D circleCollider;
     [SerializeField] float cooldown = 6.0f;
     [SerializeField] Invincibility invincibility;
+    [SerializeField] C_bulletGenerator c_bulletGenerator;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
@@ -120,6 +121,7 @@ public class fighterController : MonoBehaviour
         fighterPrefab.SetActive(true);
         //無敵メソッド
         invincibility.SetInvincibility();
+        c_bulletGenerator.pow = 1;
     }
     //パワーアップをとった時の挙動
     void PowerUp()

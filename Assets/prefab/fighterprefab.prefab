@@ -323,6 +323,7 @@ MonoBehaviour:
   circleCollider: {fileID: 4884849563977554699}
   cooldown: 6
   invincibility: {fileID: 4527034384828298933}
+  c_bulletGenerator: {fileID: 0}
   PowerUpPrefab: {fileID: 8018582336760354748}
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
   fighterPrefab: {fileID: 5479672855056201959}
