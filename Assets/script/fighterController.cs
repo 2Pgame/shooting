@@ -126,6 +126,11 @@ public class fighterController : MonoBehaviour
             Debug.Log("I‚í‚è");
             invincibility.SetInvincibility2();
         }
+        if (fighterPrefab.transform.position.y > -20.0f)
+        {
+            Debug.Log("ƒNƒŠƒA");
+            Destroy(fighterPrefab);
+        }
 
     }
     void OnTriggerEnter2D(Collider2D coll)

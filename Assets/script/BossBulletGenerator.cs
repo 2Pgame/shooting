@@ -14,25 +14,30 @@ public class BossBulletGenerator : MonoBehaviour
     Transform bulletPoint2;
     GameObject EnemyBullet;
     GameObject EnemyBullet2;
+    [SerializeField]
+    GameObject boss;
     float span = 1.0f;
     float delta = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if (delta > span)
+        if (boss != null && boss.transform.position.y < -20.2f)
         {
-            delta = 0;
+            this.delta += Time.deltaTime;
+            if (delta > span)
+            {
+                delta = 0;
 
-            EnemyBullet = Instantiate(enemybullet, bulletPoint.transform.position, bulletPoint.transform.rotation);
-            EnemyBullet2 = Instantiate(enemybullet, bulletPoint2.transform.position, bulletPoint2.transform.rotation);
-            Debug.Log(transform.position);
+                EnemyBullet = Instantiate(enemybullet, bulletPoint.transform.position, bulletPoint.transform.rotation);
+                EnemyBullet2 = Instantiate(enemybullet, bulletPoint2.transform.position, bulletPoint2.transform.rotation);
+                Debug.Log(transform.position);
+            }
         }
     }
 }
