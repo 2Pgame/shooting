@@ -35,61 +35,6 @@ public class fighterController : MonoBehaviour
         float horizontal;
         float vertical;
 
-        //if (transform.position.x > 8.0f)
-        //{
-        //    //横矢印入力を値で返し変数「x」に格納
-        //    horizontal = Input.GetAxis("Horizontal");
-        //    //縦矢印入力を値で返し変数「y」に格納
-        //    vertical = Input.GetAxis("Vertical");
-        //    if (horizontal > 0)
-        //    {
-        //        horizontal = 0;
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-        //    }
-        //    else
-        //    {
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-        //    }
-
-        //}
-        //else if (transform.position.x < -8.0f)
-        //{
-        //    //横矢印入力を値で返し変数「x」に格納
-        //    horizontal = Input.GetAxis("Horizontal");
-        //    //縦矢印入力を値で返し変数「y」に格納
-        //    vertical = Input.GetAxis("Vertical");
-        //    if (horizontal < 0)
-        //    {
-        //        horizontal = 0;
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-        //    }
-        //    else
-        //    {
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-        //    }
-        //}
-        //else if (transform.position.y > 4.0f)
-        //{
-        //    //横矢印入力を値で返し変数「x」に格納
-        //    horizontal = Input.GetAxis("Horizontal");
-        //    //縦矢印入力を値で返し変数「y」に格納
-        //    vertical = Input.GetAxis("Vertical");
-        //    if (vertical > 0)
-        //    {
-        //        vertical = 0;
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-        //    }
-        //    else
-        //    {
-        //        transform.Translate(horizontal * Time.deltaTime * Speed, vertical * Time.deltaTime * Speed, 0);
-
-        //    }
-        //}
-
-
-
-        //else
-        //{
         //横矢印入力を値で返し変数「x」に格納
         horizontal = Input.GetAxis("Horizontal");
         //縦矢印入力を値で返し変数「y」に格納
@@ -108,22 +53,26 @@ public class fighterController : MonoBehaviour
 
         //変数「pos」のy軸における座標を毎フレーム毎に「y」の分だけ増加
         pos1.y += vertical * Time.deltaTime * Speed;
-        if (Boss != null)
+        if (Boss != null && fighterPrefab.transform.position.y < -32f)
+        {
+            pos1.y = Mathf.Clamp(pos1.y, -10f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y);
+            FirstMove();
+        }
+        else if (Boss != null)
         {
             pos1.y = Mathf.Clamp(pos1.y, -4.4f + Camera.main.transform.position.y, 4.0f + Camera.main.transform.position.y);
-
             transform.position = pos1;
-
         }
         else
         {
-
-            pos1.y = Mathf.Clamp(pos1.y, -6f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y); ;
+            pos1.y = Mathf.Clamp(pos1.y, -6f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y);
             Invoke("Move", 3f);
         }
+
         if (mainCore == null)
         {
             Debug.Log("終わり");
+            //ずっと無敵で終わる
             invincibility.SetInvincibility2();
         }
         if (fighterPrefab.transform.position.y > -20.0f)
@@ -145,46 +94,46 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
-            circleCollider.enabled = false;
             Destroy(coll.gameObject);
-
+            //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
-            Invoke("barrier", 6);
         }
         if (coll.CompareTag("EnemyBullet"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
-            circleCollider.enabled = false;
             Destroy(coll.gameObject);
+            //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
-            Invoke("barrier", cooldown);
         }
         if (coll.CompareTag("Boss"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
-            circleCollider.enabled = false;
+            //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
-            Invoke("barrier", cooldown);
         }
     }
+    //時期が破壊された時の挙動
     private void Dead()
     {
         fighterPrefab.SetActive(true);
+        //無敵メソッド
         invincibility.SetInvincibility();
     }
-    void barrier()
-    {
-
-        circleCollider.enabled = true;
-    }
+    //パワーアップをとった時の挙動
     void PowerUp()
     {
         PowerUpPrefab.SetActive(false);
     }
-    void Move()
+    //クリア時の自機の挙動をつかさどるメソッド
+    void LastMove()
     {
-        transform.Translate(0, 3*Time.deltaTime, 0);
+        transform.Translate(0, 3 * Time.deltaTime, 0);
+    }
+    //最初の自機の挙動をつかさどるメソッド
+    void FirstMove()
+    {
+        transform.Translate(0, 2 * Time.deltaTime, 0);
     }
 }
