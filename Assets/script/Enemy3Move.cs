@@ -8,6 +8,8 @@ public class Enemy3Move : MonoBehaviour
     public float fallSpeed = 5;
     float DieTime = 5;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
+    [SerializeField]
+    AudioClip audio1;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,9 @@ public class Enemy3Move : MonoBehaviour
         if (collision.CompareTag("bullet"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(audio1, transform.position, 20f);
             Destroy(collision.gameObject);
         }
     }

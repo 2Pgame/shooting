@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float rotSpeed = 360;
     public float fallSpeed = -5;
     float DieTime = 5;
+    [SerializeField]
+    AudioClip audio1;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(audio1, transform.position, 20f);
             Destroy(collision.gameObject);
         }
     }

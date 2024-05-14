@@ -27,7 +27,7 @@ public class LB_bulletGenerator : MonoBehaviour
 
         if (pow >= 3)
         {
-            if (Input.GetKey(KeyCode.V))
+            if (Input.GetButton("Fire1"))
             {
                 delta += Time.deltaTime;
                 pos = fighter.transform.position;

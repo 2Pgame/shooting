@@ -5,6 +5,8 @@ using UnityEngine;
 public class MainCore : MonoBehaviour
 {
     [SerializeField] int Hp = 2;
+    [SerializeField] AudioClip audio1;
+    [SerializeField] AudioClip audio2;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     public GameObject subCore1;
@@ -36,6 +38,7 @@ public class MainCore : MonoBehaviour
             {
                 Debug.Log("当たった");
                 Hp--;
+                AudioSource.PlayClipAtPoint(audio1, transform.position);
                 Destroy(collision.gameObject);
                 GameObject DamageEffect = Instantiate(damage, collision.transform.position, Quaternion.identity) as GameObject;
                 Destroy(DamageEffect, 0.1f);
@@ -44,6 +47,7 @@ public class MainCore : MonoBehaviour
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Boss.SetActive(true);
+                AudioSource.PlayClipAtPoint(audio2, transform.position,20f);
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }
@@ -52,6 +56,7 @@ public class MainCore : MonoBehaviour
         {
             if (collision.CompareTag("bullet"))
             {
+                AudioSource.PlayClipAtPoint(audio1, transform.position);
                 Destroy(collision.gameObject);
             }
         }

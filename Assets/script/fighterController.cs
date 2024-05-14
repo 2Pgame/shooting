@@ -12,21 +12,24 @@ public class fighterController : MonoBehaviour
     [SerializeField]
     float Speed = 2.0f;
     [SerializeField] CircleCollider2D circleCollider;
-    [SerializeField] float cooldown = 6.0f;
     [SerializeField] Invincibility invincibility;
-    [SerializeField] C_bulletGenerator c_bulletGenerator;
+    [SerializeField]GameSharedData gameSharedData;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
     public GameObject mainCore;
     public GameObject Boss;
-
+    public AudioClip audio1;
+    public AudioClip audio2;
+    AudioSource aud;
+    Vector3 pos = new Vector3(0,0,0);
 
     // Start is called before the first frame update
     void Start()
     {
         PowerUpPrefab.SetActive(false);
         circleCollider = GetComponent<CircleCollider2D>();
+        aud = GetComponent<AudioSource>();
         //オブジェクトの現在の座標を入手
         //pos1.y = 0;
     }
@@ -90,6 +93,7 @@ public class fighterController : MonoBehaviour
         {
             PowerUpPrefab.SetActive(true);
             Invoke("PowerUp", 1.0f);
+            aud.PlayOneShot(this.audio1);
             Destroy(coll.gameObject);
         }
         if (coll.CompareTag("Enemy"))
@@ -97,6 +101,7 @@ public class fighterController : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
             Destroy(coll.gameObject);
+            AudioSource.PlayClipAtPoint(audio2, transform.position,15f);
             //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
         }
@@ -104,6 +109,7 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
+            AudioSource.PlayClipAtPoint(audio2, transform.position);
             Destroy(coll.gameObject);
             //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
@@ -112,6 +118,8 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
+            AudioSource.PlayClipAtPoint(audio2, transform.position,10f);
+
             //3秒後に復活６秒間点滅コライダー無効
             Invoke("Dead", 3);
         }
@@ -122,7 +130,7 @@ public class fighterController : MonoBehaviour
         fighterPrefab.SetActive(true);
         //無敵メソッド
         invincibility.SetInvincibility();
-        c_bulletGenerator.pow = 1;
+        gameSharedData.pow = 1;
     }
     //パワーアップをとった時の挙動
     void PowerUp()

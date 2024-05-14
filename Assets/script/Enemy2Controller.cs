@@ -7,11 +7,12 @@ public class Enemy2Controller : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject powerupPrefab;
     public int score = 100;
+    [SerializeField]
+    AudioClip audio1;
     [SerializeField]GameSharedData gameSharedData;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class Enemy2Controller : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Instantiate(powerupPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(audio1, transform.position,20f);
             gameSharedData.playerScore += score;
             Destroy(collision.gameObject);
         }

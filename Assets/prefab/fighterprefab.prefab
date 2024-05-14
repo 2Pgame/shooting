@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3757153122618103187}
   - component: {fileID: 2292870925781399487}
   - component: {fileID: 7134587234663513844}
+  - component: {fileID: 9141779911112034451}
   m_Layer: 0
   m_Name: bulletController
   m_TagString: bullet
@@ -80,6 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   span: 0.3
   pow: 1
+  sharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
+  audioMixer: {fileID: 24100000, guid: 281df451ea1f17b49a808e4b87a06e82, type: 2}
   bulletPrefab: {fileID: 4261232143690999646, guid: 14677c3df4ef5ee43988455cd55e0d50, type: 3}
 --- !u!114 &2292870925781399487
 MonoBehaviour:
@@ -109,6 +112,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab135: {fileID: 4261232143690999646, guid: a3058b75c5c51e8439ea3db894da6db7, type: 3}
   bullet: {fileID: 3757153122618103187}
+--- !u!82 &9141779911112034451
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506085396314073234}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7400704428330339353, guid: 281df451ea1f17b49a808e4b87a06e82, type: 2}
+  m_audioClip: {fileID: 8300000, guid: be8bb84b3dd817d4ca95eb75a0d41806, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3202299373638428812
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +328,6 @@ GameObject:
   - component: {fileID: 4527034384828298933}
   - component: {fileID: 5019659505796536723}
   - component: {fileID: 4884849563977554699}
-  - component: {fileID: 5592783342865294811}
   m_Layer: 0
   m_Name: fighterprefab
   m_TagString: Player
@@ -323,12 +421,12 @@ MonoBehaviour:
   circleCollider: {fileID: 4884849563977554699}
   cooldown: 6
   invincibility: {fileID: 4527034384828298933}
-  c_bulletGenerator: {fileID: 0}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
   PowerUpPrefab: {fileID: 8018582336760354748}
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
   fighterPrefab: {fileID: 5479672855056201959}
-  mainCore: {fileID: 9216756055255797397, guid: 2e3fa6191a06b5e42a860784f75dfc4d, type: 3}
-  Boss: {fileID: 7604497574738376654, guid: 6692a610e91f05044a81919140b3f7fd, type: 3}
+  mainCore: {fileID: 0}
+  Boss: {fileID: 0}
 --- !u!114 &4527034384828298933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,27 +507,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.185
---- !u!95 &5592783342865294811
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5479672855056201959}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8017189920793250094
 PrefabInstance:
   m_ObjectHideFlags: 0

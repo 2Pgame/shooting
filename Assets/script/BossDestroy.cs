@@ -7,6 +7,7 @@ public class BossDestroy : MonoBehaviour
 
     public GameObject explosionPrefab;
     public GameObject Boss;
+    [SerializeField] AudioClip audio1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class BossDestroy : MonoBehaviour
         float randomY = Random.Range(-3, 3);
 
         Instantiate(explosionPrefab, transform.position - new Vector3(randomX, randomY, 0), Quaternion.identity);
+        AudioSource.PlayClipAtPoint(audio1, transform.position, 20f);
     }
     void StopRepeating()
     {
