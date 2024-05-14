@@ -27,7 +27,7 @@ public class L_bulletGenerator : MonoBehaviour
         pow = bullet.pow;
         if (pow == 1)
         {
-            if (Input.GetKey(KeyCode.V))
+            if (Input.GetButton("Fire1"))
             {
                 delta += Time.deltaTime;
                 pos = fighter.transform.position;
@@ -42,7 +42,7 @@ public class L_bulletGenerator : MonoBehaviour
         }
         else if (pow >= 2)
         {
-            if (Input.GetKey(KeyCode.V))
+            if (Input.GetButton("Fire1"))
             {
                 delta += Time.deltaTime;
                 pos = fighter.transform.position;

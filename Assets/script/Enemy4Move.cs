@@ -6,6 +6,8 @@ public class Enemy4Move : MonoBehaviour
 {
     [SerializeField] float MoveSpeed = 1.0f;
     [SerializeField] int Hp = 2;
+    [SerializeField] AudioClip audio1;
+    [SerializeField] AudioClip audio2;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     GameObject Enemy4Generator;
@@ -39,6 +41,7 @@ public class Enemy4Move : MonoBehaviour
             if (Hp > 0)
             {
                 Hp--;
+                AudioSource.PlayClipAtPoint(audio1, transform.position);
                 Destroy(collision.gameObject);
                 GameObject DamageEffect = Instantiate(damage, collision.transform.position, Quaternion.identity)as GameObject;
                 Destroy(DamageEffect,0.1f);
@@ -46,6 +49,7 @@ public class Enemy4Move : MonoBehaviour
             else 
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(audio2, transform.position,20f);
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }

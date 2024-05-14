@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpController : MonoBehaviour
 {
-
+    [SerializeField]GameSharedData gameSharedData;
 
  
     GameObject bulletController;
@@ -12,7 +12,6 @@ public class PowerUpController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletController = GameObject.Find("bulletController");
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class PowerUpController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-        bulletController.GetComponent<C_bulletGenerator>().pow++;
+        gameSharedData.pow++;
         Destroy(gameObject);
         }
     }

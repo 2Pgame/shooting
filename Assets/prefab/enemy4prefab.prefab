@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 1
   Hp: 10
+  audio1: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
+  audio2: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
   damage: {fileID: 291815792771938001, guid: 3e68d7cedb81ae34da3356824a5d76b1, type: 3}
 --- !u!114 &705789252241986517
