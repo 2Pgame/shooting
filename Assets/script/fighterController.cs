@@ -15,7 +15,6 @@ public class fighterController : MonoBehaviour
     [SerializeField] CircleCollider2D circleCollider;
     [SerializeField] Invincibility invincibility;
     [SerializeField] GameSharedData gameSharedData;
-    [SerializeField] TextMeshProUGUI textMeshProUGUI;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
@@ -32,7 +31,6 @@ public class fighterController : MonoBehaviour
         PowerUpPrefab.SetActive(false);
         circleCollider = GetComponent<CircleCollider2D>();
         aud = GetComponent<AudioSource>();
-        gameSharedData.myFighter = 4;
         //オブジェクトの現在の座標を入手
         //pos1.y = 0;
     }
