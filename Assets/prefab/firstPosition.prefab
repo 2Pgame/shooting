@@ -48,6 +48,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2285667111185730994, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: Hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285667111185730994, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio1
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
+    - target: {fileID: 2285667111185730994, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio2
+      value: 
+      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+    - target: {fileID: 3126686482628693800, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
+    - target: {fileID: 3133342097330921320, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
     - target: {fileID: 4140176522833862275, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8533894
@@ -88,7 +108,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5112303159047734714, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio1
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
+    - target: {fileID: 5112303159047734714, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio2
+      value: 
+      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+    - target: {fileID: 5239749966282205806, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio1
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
+    - target: {fileID: 5239749966282205806, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio2
+      value: 
+      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+    - target: {fileID: 5841315408281196012, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
+    - target: {fileID: 6411914237523494328, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
+    - target: {fileID: 7229843367038545496, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
+    - target: {fileID: 7791698244301073011, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: audio1
+      value: 
+      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+    - target: {fileID: 7893038031171569081, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
     - target: {fileID: 8101376866265729727, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 7890010320426372938}
+    - target: {fileID: 8880188051516564209, guid: 0e6785a2e3979294dae817ab7bf733fb, type: 3}
       propertyPath: boss
       value: 
       objectReference: {fileID: 7890010320426372938}
