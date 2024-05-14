@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class fighterController : MonoBehaviour
     float Speed = 2.0f;
     [SerializeField] CircleCollider2D circleCollider;
     [SerializeField] Invincibility invincibility;
-    [SerializeField]GameSharedData gameSharedData;
+    [SerializeField] GameSharedData gameSharedData;
     public GameObject PowerUpPrefab;
     public GameObject explosionPrefab;
     public GameObject fighterPrefab;
@@ -22,7 +23,7 @@ public class fighterController : MonoBehaviour
     public AudioClip audio1;
     public AudioClip audio2;
     AudioSource aud;
-    Vector3 pos = new Vector3(0,0,0);
+    Vector3 pos = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -100,8 +101,9 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
+            gameSharedData.myFighter--;
             Destroy(coll.gameObject);
-            AudioSource.PlayClipAtPoint(audio2, transform.position,15f);
+            AudioSource.PlayClipAtPoint(audio2, transform.position, 15f);
             //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
             Invoke("Dead", 3);
         }
@@ -109,6 +111,7 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
+            gameSharedData.myFighter--;
             AudioSource.PlayClipAtPoint(audio2, transform.position);
             Destroy(coll.gameObject);
             //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
@@ -118,7 +121,10 @@ public class fighterController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             fighterPrefab.SetActive(false);
-            AudioSource.PlayClipAtPoint(audio2, transform.position,10f);
+            AudioSource.PlayClipAtPoint(audio2, transform.position, 10f);
+            gameSharedData.myFighter--;
+
+
 
             //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
             Invoke("Dead", 3);

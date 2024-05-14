@@ -9,6 +9,7 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         gameSharedData.pow = 1;
+        gameSharedData.myFighter = 4;
     }
 
     // Update is called once per frame
