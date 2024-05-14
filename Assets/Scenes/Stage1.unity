@@ -10278,7 +10278,7 @@ Transform:
   m_GameObject: {fileID: 879793502}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -34.9, z: 0}
+  m_LocalPosition: {x: -0.4, y: -33.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10415,77 +10415,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2081326617823526604, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: Hp
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081326617823526604, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio1
+      propertyPath: space
       value: 
-      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
-    - target: {fileID: 2081326617823526604, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio2
-      value: 
-      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
-    - target: {fileID: 2891829526378359830, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 2899809511226358870, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 5019408069861226180, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio1
-      value: 
-      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
-    - target: {fileID: 5019408069861226180, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio2
-      value: 
-      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+      objectReference: {fileID: 879793502}
     - target: {fileID: 5471131916024862992, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio1
+      propertyPath: space
       value: 
-      objectReference: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
-    - target: {fileID: 5471131916024862992, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio2
-      value: 
-      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
-    - target: {fileID: 5929706628306085522, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 6602764885777512134, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 7426323171824934182, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
+      objectReference: {fileID: 879793502}
     - target: {fileID: 7890010320426372938, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
       propertyPath: m_Name
       value: firstPosition
       objectReference: {fileID: 0}
-    - target: {fileID: 7890010320426372938, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7985935392401143495, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 8033196801319426317, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: audio1
-      value: 
-      objectReference: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
-    - target: {fileID: 8302340828664003009, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
-    - target: {fileID: 8675844191965368719, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
-      propertyPath: boss
-      value: 
-      objectReference: {fileID: 534406877}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

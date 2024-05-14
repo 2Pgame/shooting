@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 // ScriptableObjectを継承し、Unityエディタのメニューから生成可能にする属性設定
@@ -7,8 +8,10 @@ public class GameSharedData : ScriptableObject
     // プレイヤーのスコアを公開変数として保持
     public int playerScore; // プレイヤーのスコアを表す整数型の公開フィールド
     public int stageSelect;
+    public int myFighter = 4;
     public int pow = 1;
     public unityStage unitystage;
+    public string gameover = "GameOver";
     public enum unityStage
     {
         Landscape,
