@@ -9,6 +9,7 @@ public class C_bulletGenerator : MonoBehaviour
     public float span = 0.5f;
     float delta = 0;
     public int pow = 2;
+    float vol = -20f;
     [SerializeField]GameSharedData sharedData;
     [SerializeField]AudioMixer audioMixer;
     // publicでクラスのインスタンスを作成
@@ -33,7 +34,7 @@ public class C_bulletGenerator : MonoBehaviour
                     {
                 delta = 0;
             audioMixer.SetFloat("SEVolume", -20);
-            var volume = audioMixer.GetFloat("SEVolume", out float vol);
+            var volume = audioMixer.GetFloat("SEVolume",out vol);
             GetComponent<AudioSource>().Play();
             }
         }
