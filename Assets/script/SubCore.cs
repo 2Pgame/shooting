@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SubCore : MonoBehaviour
 {
+    int score = 2000;
+    [SerializeField]GameSharedData gameSharedData;
     [SerializeField] int Hp = 2;
     [SerializeField] AudioClip audio1;
     [SerializeField] AudioClip audio2;
@@ -39,6 +41,7 @@ public class SubCore : MonoBehaviour
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(audio2, transform.position, 20f);
+                gameSharedData.playerScore += score;
                 Destroy(gameObject);
                 Destroy(canonfound);
                 Destroy(collision.gameObject);

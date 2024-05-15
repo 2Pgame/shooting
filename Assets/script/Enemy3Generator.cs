@@ -7,29 +7,19 @@ public class Enemy3Generator : MonoBehaviour
     public GameObject Enemy3;
     float span = 1.0f;
     float delta = 0;
-    GameObject star;
     // Start is called before the first frame update
     void Start()
     {
-        star = GameObject.Find("starlight");
-        // ゲーム開始時に、敵を即座に生成し始め、その後1秒ごとに繰り返し生成します。
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (star.transform.position.y <= -10 && -10.5 <= star.transform.position.y)
-        {
-            EnemyExist();
-        }
-        if (star.transform.position.y <= -6 && -6.5 <= star.transform.position.y)
-        {
-            EnemyExist();
-        }
+
 
     }
-    void EnemyExist()
+    public void EnemyExist()
     {
         this.delta += Time.deltaTime;
         if (delta > span)

@@ -5067,6 +5067,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2888626228414820367, guid: ee85f6971accc26499ffbbe943a28f91, type: 3}
   m_PrefabInstance: {fileID: 1440428585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &340538292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340538294}
+  - component: {fileID: 340538293}
+  m_Layer: 0
+  m_Name: GlobalEnemyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &340538293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340538292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ce8a8e09618d4796bf31b5d1fcd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1958444429}
+  enemy3: {fileID: 996922864}
+  enemy4: {fileID: 2078551420}
+--- !u!4 &340538294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340538292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.984881, y: -19.88292, z: -0.016683746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341502852
 GameObject:
   m_ObjectHideFlags: 0
@@ -10278,7 +10325,7 @@ Transform:
   m_GameObject: {fileID: 879793502}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -33.6, z: 0}
+  m_LocalPosition: {x: -0.4, y: -31.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10304,8 +10351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc361a1c620d7c4098c96f956652996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMove: -0.1
+  cameraMove: -0.2
   Boss: {fileID: 2072949380}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
 --- !u!4 &904926940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2888626228414820367, guid: ee85f6971accc26499ffbbe943a28f91, type: 3}
@@ -10418,14 +10466,30 @@ PrefabInstance:
       propertyPath: space
       value: 
       objectReference: {fileID: 879793502}
+    - target: {fileID: 2081326617823526604, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
+      propertyPath: gameSharedData
+      value: 
+      objectReference: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
+    - target: {fileID: 5019408069861226180, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
+      propertyPath: gameSharedData
+      value: 
+      objectReference: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
     - target: {fileID: 5471131916024862992, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
       propertyPath: space
       value: 
       objectReference: {fileID: 879793502}
+    - target: {fileID: 5471131916024862992, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
+      propertyPath: gameSharedData
+      value: 
+      objectReference: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
     - target: {fileID: 7890010320426372938, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
       propertyPath: m_Name
       value: firstPosition
       objectReference: {fileID: 0}
+    - target: {fileID: 8033196801319426317, guid: c21843da5c6e8184ca330c22fc9aaf01, type: 3}
+      propertyPath: gameSharedData1
+      value: 
+      objectReference: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15867,7 +15931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy4prefab: {fileID: 9030626195872310352, guid: 29015122a8fadea4e86254834754bad8, type: 3}
-  star: {fileID: 879793502}
   Number: 0
 --- !u!4 &2078551421
 Transform:
@@ -15900,3 +15963,4 @@ SceneRoots:
   - {fileID: 1500215927}
   - {fileID: 428504255}
   - {fileID: 861118626}
+  - {fileID: 340538294}

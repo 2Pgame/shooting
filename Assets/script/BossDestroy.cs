@@ -8,6 +8,7 @@ public class BossDestroy : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject Boss;
     [SerializeField] AudioClip audio1;
+    [SerializeField]GameSharedData gameSharedData1;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class BossDestroy : MonoBehaviour
     {
         // ‘S‚Ä‚ÌInvokeRepeating‚ðƒLƒƒƒ“ƒZƒ‹
         CancelInvoke("BossExplosion");
+        gameSharedData1.stageClear = true;
         Destroy(Boss);
 
     }

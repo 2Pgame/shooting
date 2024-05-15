@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    float cameraMove = -0.1f;
+    float cameraMove = -0.2f;
     [SerializeField]
     GameObject Boss;
+    [SerializeField]
+    GameSharedData gameSharedData;
     bool aÅ@=true;
     bool b = true;
     bool c = true;
     bool d = true;
+    bool e = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +48,15 @@ public class CameraController : MonoBehaviour
             AudioManager.Instance.Play("We&#039re_gonna_do_it!");
             d = false;
         }
+        if (gameSharedData.myFighter<0&& e)
+        {
+            AudioManager.Instance.Play("We&#039re_gonna_do_it!");
+            e = false;
+            Invoke("Title", 10f);
+        }
+    }
+    void Title()
+    {
+        SceneManager.LoadScene("Title");
     }
 }

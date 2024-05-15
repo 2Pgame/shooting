@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Enemy4Move : MonoBehaviour
 {
+    int score = 1000;
     [SerializeField] float MoveSpeed = 1.0f;
     [SerializeField] int Hp = 2;
     [SerializeField] AudioClip audio1;
     [SerializeField] AudioClip audio2;
+    [SerializeField]GameSharedData gameSharedData;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     GameObject Enemy4Generator;
@@ -50,6 +52,7 @@ public class Enemy4Move : MonoBehaviour
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(audio2, transform.position,20f);
+                gameSharedData.playerScore += score;
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }

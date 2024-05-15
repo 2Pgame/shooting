@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MainCore : MonoBehaviour
 {
+    int score = 5000;
     [SerializeField] int Hp = 2;
     [SerializeField] AudioClip audio1;
     [SerializeField] AudioClip audio2;
+    [SerializeField]GameSharedData gameSharedData;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     public GameObject damage;
     public GameObject subCore1;
     public GameObject subCore2;
     public GameObject Boss;
     public float time;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,13 @@ public class MainCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        if (gameSharedData.myFighter >= 0)
+        {
+            time += Time.deltaTime;
+        }
+        else 
+        {
+        }
         if (time > 60)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
@@ -48,6 +57,7 @@ public class MainCore : MonoBehaviour
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Boss.SetActive(true);
                 AudioSource.PlayClipAtPoint(audio2, transform.position,20f);
+                gameSharedData.playerScore += score;
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }

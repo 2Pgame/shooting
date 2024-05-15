@@ -100,10 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2a3bed98f445a4fafddf560a0a4112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 100
+  score: 200
   rotSpeed: 360
   fallSpeed: -5
   audio1: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
 --- !u!58 &4322028255301621818
 CircleCollider2D:
