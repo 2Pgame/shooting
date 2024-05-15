@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy3Move : MonoBehaviour
 {
-    public int point = 100;
+    public int score = 400;
     public float fallSpeed = 5;
     float DieTime = 5;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     [SerializeField]
     AudioClip audio1;
+    [SerializeField]
+    GameSharedData gameSharedData;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,7 @@ public class Enemy3Move : MonoBehaviour
         if (collision.CompareTag("bullet"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
+            gameSharedData.playerScore += score;
             Destroy(gameObject);
             AudioSource.PlayClipAtPoint(audio1, transform.position, 20f);
             Destroy(collision.gameObject);

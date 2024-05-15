@@ -22,6 +22,7 @@ public class fighterController : MonoBehaviour
     public GameObject Boss;
     public AudioClip audio1;
     public AudioClip audio2;
+    public bool isCheck;
     AudioSource aud;
     Vector3 pos = new Vector3(0, 0, 0);
 
@@ -86,7 +87,19 @@ public class fighterController : MonoBehaviour
             Debug.Log("ÉNÉäÉA");
             Destroy(fighterPrefab);
         }
-
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (gameSharedData.isCheck)
+            {
+                gameSharedData.isCheck = false;
+                PauseDelete();
+            }
+            else
+            {
+                gameSharedData.isCheck = true;
+                Pause();
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -104,8 +117,15 @@ public class fighterController : MonoBehaviour
             gameSharedData.myFighter--;
             Destroy(coll.gameObject);
             AudioSource.PlayClipAtPoint(audio2, transform.position, 15f);
-            //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
-            Invoke("Dead", 3);
+            if (gameSharedData.myFighter < 0)
+            {
+
+            }
+            else
+            {
+                //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
+                Invoke("Dead", 3);
+            }
         }
         if (coll.CompareTag("EnemyBullet"))
         {
@@ -114,8 +134,15 @@ public class fighterController : MonoBehaviour
             gameSharedData.myFighter--;
             AudioSource.PlayClipAtPoint(audio2, transform.position);
             Destroy(coll.gameObject);
-            //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
-            Invoke("Dead", 3);
+            if (gameSharedData.myFighter < 0)
+            {
+
+            }
+            else
+            {
+                //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
+                Invoke("Dead", 3);
+            }
         }
         if (coll.CompareTag("Boss"))
         {
@@ -125,9 +152,15 @@ public class fighterController : MonoBehaviour
             gameSharedData.myFighter--;
 
 
+            if (gameSharedData.myFighter < 0)
+            {
 
-            //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
-            Invoke("Dead", 3);
+            }
+            else
+            {
+                //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
+                Invoke("Dead", 3);
+            }
         }
     }
     //éûä˙Ç™îjâÛÇ≥ÇÍÇΩéûÇÃãììÆ
@@ -152,5 +185,13 @@ public class fighterController : MonoBehaviour
     void FirstMove()
     {
         transform.Translate(0, 2 * Time.deltaTime, 0);
+    }
+    void Pause()
+    {
+        Time.timeScale = 0;
+    }
+    void PauseDelete()
+    {
+        Time.timeScale = 1;
     }
 }

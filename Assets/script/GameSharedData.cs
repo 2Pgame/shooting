@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,13 +11,9 @@ public class GameSharedData : ScriptableObject
     public int stageSelect;
     public int myFighter = 4;
     public int pow = 1;
-    public unityStage unitystage;
     public string gameover = "GameOver";
-    public enum unityStage
-    {
-        Landscape,
-        Beach,
-        Mountain,
-        Space
-    }
+    public bool stageClear;
+    public bool isCheck;
+
+
 }

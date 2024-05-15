@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject space;
     private static AudioManager instance;
     [SerializeField] private AudioSource aud;
+    [SerializeField] private AudioSource aud_loop;
     private readonly Dictionary<string,AudioClip> _clips = new Dictionary<string,AudioClip>();
 
     public static AudioManager Instance
@@ -40,29 +41,22 @@ public class AudioManager : MonoBehaviour
         aud.clip = _clips[clipName];
         aud.Play();
     }
+    public void Play_loop(string clipName)
+    {
+        if (!_clips.ContainsKey(clipName))
+        {
+            throw new System.Exception("sound" + clipName + "is not defined");
+        }
+        aud_loop.clip = _clips[clipName];
+        aud_loop.Play();
+    }
     public void Stop()
     {
         aud.Stop();
     }
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void Stop_loop()
     {
-        //aud = GetComponent<AudioSource>();
-        //Invoke("BGM", 3);
+        aud_loop.Stop();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (space.transform.position.y < -34)
-        //{
-        //    aud.PlayOneShot(audio2);
-        //}
-    }
-    void BGM()
-    {
-        //aud.PlayOneShot(audio1);
-    }
 }

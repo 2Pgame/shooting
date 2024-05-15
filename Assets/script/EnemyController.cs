@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int point = 100;
+    public int score = 200;
     public float rotSpeed = 360;
     public float fallSpeed = -5;
     float DieTime = 5;
     [SerializeField]
     AudioClip audio1;
+    [SerializeField]
+    GameSharedData gameSharedData;
     public GameObject explosionPrefab;   //爆発エフェクトのPrefab
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            gameSharedData.playerScore += score;
             AudioSource.PlayClipAtPoint(audio1, transform.position, 20f);
             Destroy(collision.gameObject);
         }
