@@ -55,8 +55,8 @@ public class GameManager : MonoBehaviour
         }
         if (gameSharedData.stageClear)
         {
-            Invoke("Text", 3f);
-            Invoke("Clear", 10f);
+            Invoke("Text", 8f);
+            Invoke("Clear", 15f);
         }
         if (gameSharedData.isCheck)
         {

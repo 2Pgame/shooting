@@ -28,12 +28,13 @@ public class CameraController : MonoBehaviour
         if (transform.position.y < -7f  && a)
         {
             Debug.Log("最初");
-            AudioManager.Instance.Play("Gunner_Queen");
+            AudioManager.Instance.Play_loop("Gunner_Queen");
             a = false;
         }
         if (transform.position.y<-34.4f && b)
         {
             Debug.Log("次");
+            AudioManager.Instance.Stop_loop();
             AudioManager.Instance.Play("警報・アラート音");
             b = false;
         }

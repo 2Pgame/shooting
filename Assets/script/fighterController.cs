@@ -87,11 +87,11 @@ public class fighterController : MonoBehaviour
             Debug.Log("ÉNÉäÉA");
             Destroy(fighterPrefab);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"))
         {
             if (gameSharedData.isCheck)
             {
-               gameSharedData.isCheck = false;
+                gameSharedData.isCheck = false;
                 PauseDelete();
             }
             else
@@ -99,7 +99,7 @@ public class fighterController : MonoBehaviour
                 gameSharedData.isCheck = true;
                 Pause();
             }
-}
+        }
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -152,14 +152,14 @@ public class fighterController : MonoBehaviour
             gameSharedData.myFighter--;
 
 
-            if (gameSharedData.myFighter < 0) 
+            if (gameSharedData.myFighter < 0)
             {
 
             }
             else
-            { 
-            //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
-            Invoke("Dead", 3);
+            {
+                //3ïbå„Ç…ïúäàÇUïbä‘ì_ñ≈ÉRÉâÉCÉ_Å[ñ≥å¯
+                Invoke("Dead", 3);
             }
         }
     }
@@ -190,7 +190,7 @@ public class fighterController : MonoBehaviour
     {
         Time.timeScale = 0;
     }
-    void PauseDelete() 
+    void PauseDelete()
     {
         Time.timeScale = 1;
     }
