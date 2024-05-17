@@ -85,6 +85,7 @@ public class fighterController : MonoBehaviour
         if (fighterPrefab.transform.position.y > -20.0f)
         {
             Debug.Log("ÉNÉäÉA");
+            gameSharedData.GameOverScore = gameSharedData.playerScore;
             Destroy(fighterPrefab);
         }
         if (Input.GetButtonDown("Jump"))
