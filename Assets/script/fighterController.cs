@@ -40,7 +40,14 @@ public class fighterController : MonoBehaviour
     {
         float horizontal;
         float vertical;
-
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Speed = 4f;
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Speed = 2f;
+        }
         //横矢印入力を値で返し変数「x」に格納
         horizontal = Input.GetAxis("Horizontal");
         //縦矢印入力を値で返し変数「y」に格納
