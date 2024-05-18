@@ -11,6 +11,7 @@ public class GameSharedData : ScriptableObject
     public int stageSelect;
     public int myFighter = 4;
     public int pow = 1;
+    public int Speed = 2;
     public string gameover = "GameOver";
     public bool stageClear;
     public bool isCheck;

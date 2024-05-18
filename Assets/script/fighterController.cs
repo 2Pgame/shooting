@@ -10,8 +10,6 @@ public class fighterController : MonoBehaviour
 {
     //座標の変数定義
     Vector3 pos1;
-    [SerializeField]
-    float Speed = 2.0f;
     [SerializeField] CircleCollider2D circleCollider;
     [SerializeField] Invincibility invincibility;
     [SerializeField] GameSharedData gameSharedData;
@@ -40,14 +38,7 @@ public class fighterController : MonoBehaviour
     {
         float horizontal;
         float vertical;
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Speed = 4f;
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Speed = 2f;
-        }
+
         //横矢印入力を値で返し変数「x」に格納
         horizontal = Input.GetAxis("Horizontal");
         //縦矢印入力を値で返し変数「y」に格納
@@ -58,14 +49,14 @@ public class fighterController : MonoBehaviour
         pos1 = transform.position;
 
 
-        pos1.x += horizontal * Time.deltaTime * Speed;
+        pos1.x += horizontal * Time.deltaTime * gameSharedData.Speed;
 
         //vector3はワープのためコリジョンを突き抜ける
         //- 3から3までしか動けないように縛る
         pos1.x = Mathf.Clamp(pos1.x, -8.0f, 8.0f);
 
         //変数「pos」のy軸における座標を毎フレーム毎に「y」の分だけ増加
-        pos1.y += vertical * Time.deltaTime * Speed;
+        pos1.y += vertical * Time.deltaTime * gameSharedData.Speed;
         if (Boss != null && fighterPrefab.transform.position.y < -32f)
         {
             pos1.y = Mathf.Clamp(pos1.y, -10f + Camera.main.transform.position.y, 10.0f + Camera.main.transform.position.y);
@@ -175,6 +166,7 @@ public class fighterController : MonoBehaviour
         //無敵メソッド
         invincibility.SetInvincibility();
         gameSharedData.pow = 1;
+        gameSharedData.Speed = 2;
     }
     //パワーアップをとった時の挙動
     void PowerUp()
