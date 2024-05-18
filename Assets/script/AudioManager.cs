@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance;
     [SerializeField] private AudioSource aud;
     [SerializeField] private AudioSource aud_loop;
+    [SerializeField] private AudioSource aud_end;
     private readonly Dictionary<string,AudioClip> _clips = new Dictionary<string,AudioClip>();
 
     public static AudioManager Instance
@@ -50,6 +51,15 @@ public class AudioManager : MonoBehaviour
         aud_loop.clip = _clips[clipName];
         aud_loop.Play();
     }
+    public void Play_end(string clipName)
+    {
+        if (!_clips.ContainsKey(clipName))
+        {
+            throw new System.Exception("sound" + clipName + "is not defined");
+        }
+        aud_end.clip = _clips[clipName];
+        aud_end.Play();
+    }
     public void Stop()
     {
         aud.Stop();
@@ -58,5 +68,8 @@ public class AudioManager : MonoBehaviour
     {
         aud_loop.Stop();
     }
-
+    public void Stop_end()
+    {
+        aud_end.Stop();
+    }
 }

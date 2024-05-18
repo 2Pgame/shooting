@@ -15,5 +15,8 @@ public class GameSharedData : ScriptableObject
     public bool stageClear;
     public bool isCheck;
 
+    public int GameOverScore;
+    public string GameOverName;
+
 
 }

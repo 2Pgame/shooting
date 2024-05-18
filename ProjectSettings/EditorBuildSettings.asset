@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 30f0f3b0d0ee2714f9369047dbd25c48
+  - enabled: 1
+    path: Assets/Scenes/HiScore.unity
+    guid: 9d00477f3e4b5a2499e3082b2e7a9463
+  - enabled: 1
+    path: Assets/Scenes/InputField.unity
+    guid: f4a66d185643d1743b8d28089bdb2a28
   m_configObjects: {}

@@ -11,14 +11,19 @@ public class CameraController : MonoBehaviour
     GameObject Boss;
     [SerializeField]
     GameSharedData gameSharedData;
-    bool aÅ@=true;
-    bool b = true;
-    bool c = true;
-    bool d = true;
-    bool e = true;
+    bool a;
+    bool b;
+    bool c;
+    bool d;
+    bool e;
     // Start is called before the first frame update
     void Start()
     {
+        a = true;
+        b = true;
+        c = true;
+        d = true;
+        e = true;
     }
 
     // Update is called once per frame
@@ -27,8 +32,9 @@ public class CameraController : MonoBehaviour
         transform.Translate(0, cameraMove * Time.deltaTime, 0);
         if (transform.position.y < -7f  && a)
         {
+            AudioManager.Instance.Stop();
             Debug.Log("ç≈èâ");
-            AudioManager.Instance.Play_loop("Gunner_Queen");
+            Invoke("Opening", 3f);
             a = false;
         }
         if (transform.position.y<-34.4f && b)
@@ -51,13 +57,23 @@ public class CameraController : MonoBehaviour
         }
         if (gameSharedData.myFighter<0&& e)
         {
-            AudioManager.Instance.Play("We&#039re_gonna_do_it!");
+            AudioManager.Instance.Stop();
+            AudioManager.Instance.Stop_loop();
+            AudioManager.Instance.Play_end("game-over1");
             e = false;
-            Invoke("Title", 10f);
+            Invoke("HiScore", 15f);
         }
+    }
+    void HiScore()
+    {
+        SceneManager.LoadScene("HiScore");
     }
     void Title()
     {
         SceneManager.LoadScene("Title");
+    }
+    void Opening() 
+    {
+        AudioManager.Instance.Play_loop("Gunner_Queen");
     }
 }
