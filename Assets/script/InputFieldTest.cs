@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputFieldTest : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class InputFieldTest : MonoBehaviour
     private void OnEnterInputField(string inputMsg)
     {
         gameSharedData.GameOverName = inputMsg;
-        Debug.Log("InputField‚Ì’l: " + gameSharedData.GameOverName);
+        SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainUI", LoadSceneMode.Additive);
     }
 }

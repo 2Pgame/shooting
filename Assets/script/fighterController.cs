@@ -120,7 +120,6 @@ public class fighterController : MonoBehaviour
             AudioSource.PlayClipAtPoint(audio2, transform.position, 15f);
             if (gameSharedData.myFighter < 0)
             {
-
             }
             else
             {
@@ -137,7 +136,6 @@ public class fighterController : MonoBehaviour
             Destroy(coll.gameObject);
             if (gameSharedData.myFighter < 0)
             {
-
             }
             else
             {
@@ -155,7 +153,6 @@ public class fighterController : MonoBehaviour
 
             if (gameSharedData.myFighter < 0)
             {
-
             }
             else
             {

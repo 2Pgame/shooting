@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(gameSharedData.GameOverScore);
+        Debug.Log(gameSharedData.GameOverName);
         textMeshProUGUI3.enabled = false;
         pausePanel.SetActive(false);
         button.SetActive(false);
@@ -56,7 +58,8 @@ public class GameManager : MonoBehaviour
         if (gameSharedData.myFighter < 0)
         {
             textMeshProUGUI2.text = gameSharedData.gameover;
-            gameSharedData.GameOverScore = gameSharedData.playerScore;
+            Debug.Log(gameSharedData.playerScore);
+            Debug.Log(gameSharedData.GameOverName);
         }
         if (gameSharedData.stageClear)
         {
@@ -77,21 +80,11 @@ public class GameManager : MonoBehaviour
     }
     void Clear()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("HiScore");
     }
     void Text()
     {
         textMeshProUGUI3.enabled = true;
     }
-    class HiScore
-    {
-        public int HiScore1;
-        public string Name1;
-        public HiScore(int HiScore1, string Name1)
-        {
-            this.HiScore1 = HiScore1;
-            this.Name1 = Name1;
-        }
 
-    }
 }

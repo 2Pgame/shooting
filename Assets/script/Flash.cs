@@ -1,22 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Flash : MonoBehaviour
 {
-    // 点滅させる対象（ここがBehaviourに変更されている）
-    [SerializeField] private Behaviour _target;
+    // 点滅させる対象
+    [SerializeField] private TextMeshProUGUI _target;
     // 点滅周期[s]
     [SerializeField] private float _cycle = 1;
-    private double _time;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private double _time;
+
+    private void Update()
     {
         // 内部時刻を経過させる
         _time += Time.deltaTime;

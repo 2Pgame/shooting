@@ -61,8 +61,12 @@ public class CameraController : MonoBehaviour
             AudioManager.Instance.Stop_loop();
             AudioManager.Instance.Play_end("game-over1");
             e = false;
-            Invoke("Title", 15f);
+            Invoke("HiScore", 15f);
         }
+    }
+    void HiScore()
+    {
+        SceneManager.LoadScene("HiScore");
     }
     void Title()
     {

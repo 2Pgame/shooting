@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class Title : MonoBehaviour
+public class HiScoreButtonBack : MonoBehaviour
 {
-    [SerializeField]GameSharedData gameSharedData;
-
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(gameSharedData.GameOverName);
-        Debug.Log(gameSharedData.playerScore);
+        var button = GetComponent<Button>();
+        button.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("Title");
+        });
     }
+
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
 }
