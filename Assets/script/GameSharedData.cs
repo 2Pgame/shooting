@@ -18,6 +18,6 @@ public class GameSharedData : ScriptableObject
     public float span = 0.3f;
     public int GameOverScore;
     public string GameOverName;
-
+    public string game;
 
 }

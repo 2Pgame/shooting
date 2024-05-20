@@ -14,6 +14,7 @@ public class BossBulletGenerator : MonoBehaviour
     Transform bulletPoint2;
     GameObject EnemyBullet;
     GameObject EnemyBullet2;
+    [SerializeField]GameSharedData gameSharedData;
     [SerializeField]
     GameObject boss;
     float span = 1.0f;
@@ -21,7 +22,12 @@ public class BossBulletGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (gameSharedData.game == "normal")
+        { }
+        else 
+        {
+            span = 0.7f;
+        }
     }
 
     // Update is called once per frame

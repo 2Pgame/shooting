@@ -8,6 +8,7 @@ public class Enemy4BulletGenerator : MonoBehaviour
     GameObject enemy4;
     [SerializeField]
     GameObject enemybullet;
+    [SerializeField]GameSharedData gameSharedData;
     int Number;
     int Angle;
     float time;
@@ -15,7 +16,12 @@ public class Enemy4BulletGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (gameSharedData.game == "normal")
+        { }
+        else
+        {
+            span = 0.2f;
+        }
     }
 
     // Update is called once per frame

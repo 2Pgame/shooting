@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy4: {fileID: 9030626195872310352}
   enemybullet: {fileID: 1322527683712756447, guid: 0fdea92ae5af4c243a43542cafc4a431, type: 3}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
 --- !u!50 &1608846460860938831
 Rigidbody2D:
   serializedVersion: 4

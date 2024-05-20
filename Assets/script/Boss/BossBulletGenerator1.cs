@@ -9,7 +9,8 @@ public class BossBulletGenerator1 : MonoBehaviour
     GameObject subCore1;
     [SerializeField]
     GameObject subCore2;
-
+    [SerializeField]
+    GameSharedData gameSharedData;
     [SerializeField]
     GameObject enemybullet2;
     int Number;
@@ -19,7 +20,12 @@ public class BossBulletGenerator1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(gameSharedData.game == "normal")
+        { }
+        else
+        {
+            span = 0.2f;
+        }
     }
 
     // Update is called once per frame

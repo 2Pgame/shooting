@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy4: {fileID: 778401713001631277}
   enemybullet: {fileID: 1322527683712756447, guid: 0fdea92ae5af4c243a43542cafc4a431, type: 3}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
 --- !u!95 &5742356772582585511
 Animator:
   serializedVersion: 5
