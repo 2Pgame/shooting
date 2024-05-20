@@ -17,12 +17,13 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         gameSharedData.pow = 1;
-        gameSharedData.myFighter = 1;
+        gameSharedData.myFighter = 4;
         gameSharedData.playerScore = 0;
         gameSharedData.Speed = 2;
         gameSharedData.stageClear = false;
-        gameSharedData.isCheck = false;
+        gameSharedData.isPause = false;
         gameSharedData.span = 0.3f;
+        gameSharedData.barrier = 0;
     
 
     }
