@@ -27,7 +27,7 @@ public class SubCore : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bullet") && space.transform.position.y < -35.5f)
+        if (collision.CompareTag("bullet") && space.transform.position.y < -36.0f)
         {
             if (Hp > 0)
             {

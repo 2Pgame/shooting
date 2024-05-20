@@ -102,7 +102,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 3}
   powerupPrefab: {fileID: 1579536667672740552, guid: 041f9a02c452dd54097de0e6844f08ff, type: 3}
   score: 100
-  audio1: {fileID: 8300000, guid: ef56d5e0ebdf71b4c858b1fbfe6e8a15, type: 3}
+  audio1: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
   gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
 --- !u!58 &1694938358208352388
 CircleCollider2D:
