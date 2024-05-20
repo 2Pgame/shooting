@@ -15,7 +15,7 @@ public class GameSharedData : ScriptableObject
     public string gameover = "GameOver";
     public bool stageClear;
     public bool isCheck;
-
+    public float span = 0.3f;
     public int GameOverScore;
     public string GameOverName;
 
