@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemybulletGenerator : MonoBehaviour
 {
     public GameObject enemybullet;
-
+    [SerializeField] GameSharedData gameSharedData;
     GameObject fighter;
     float span = 1.0f;
     float delta = 0;
@@ -14,7 +14,12 @@ public class EnemybulletGenerator : MonoBehaviour
     void Start()
     {
         fighter = GameObject.Find("fighterprefab");
-
+        if (gameSharedData.game == "Normal")
+        { }
+        else
+        {
+            span = 0.7f;
+        }
             //StartCoroutine(nameof(Generate));
 
     }

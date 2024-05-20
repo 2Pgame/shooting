@@ -5,15 +5,16 @@ using UnityEngine;
 public class RankingManager : MonoBehaviour
 {
     private List<RankingEntry> rankingEntries;
+    [SerializeField]GameSharedData gameSharedData;
 
     void Awake()
     {
         LoadRanking();
     }
 
-    public void AddRankingEntry(string name, int score)
+    public void AddRankingEntry(string name, int score,string mode)
     {
-        RankingEntry newEntry = new RankingEntry(name, score, DateTime.Now);
+        RankingEntry newEntry = new RankingEntry(name, score,mode);
         rankingEntries.Add(newEntry);
         SaveRanking();
     }

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject fighter2;
     [SerializeField] GameObject fighter3;
     [SerializeField] GameObject fighter4;
+    [SerializeField] GameObject barrier;
     
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
             Invoke("Text", 8f);
             Invoke("Clear", 15f);
         }
-        if (gameSharedData.isCheck)
+        if (gameSharedData.isPause)
         {
             pausePanel.SetActive(true);
             button.SetActive(true);
@@ -76,7 +77,14 @@ public class GameManager : MonoBehaviour
             pausePanel.SetActive(false);
             button.SetActive(false);
         }
-        
+        if (gameSharedData.barrier >= 1)
+        {
+            barrier.SetActive(true);
+        }
+        else
+        {
+            barrier.SetActive(false);
+        }
     }
     void Clear()
     {

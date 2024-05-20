@@ -5,12 +5,19 @@ using UnityEngine;
 public class Enemy3Generator : MonoBehaviour
 {
     public GameObject Enemy3;
+    [SerializeField]GameSharedData gameSharedData;
     float span = 1.0f;
     float delta = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        if (gameSharedData.game == "Normal")
+        {
+        }
+        else
+        {
+            span = 0.7f;
+        }
     }
 
     // Update is called once per frame

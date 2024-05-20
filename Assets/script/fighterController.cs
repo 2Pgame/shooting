@@ -88,16 +88,21 @@ public class fighterController : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump"))
         {
-            if (gameSharedData.isCheck)
+            if (gameSharedData.isPause)
             {
-                gameSharedData.isCheck = false;
+                gameSharedData.isPause = false;
                 PauseDelete();
             }
             else
             {
-                gameSharedData.isCheck = true;
+                gameSharedData.isPause = true;
                 Pause();
             }
+        }
+        if (gameSharedData.barrier > 0 && Input.GetKeyDown(KeyCode.V))
+        {
+            gameSharedData.barrier--;
+            invincibility.SetInvincibility3();
         }
     }
     void OnTriggerEnter2D(Collider2D coll)

@@ -14,10 +14,11 @@ public class GameSharedData : ScriptableObject
     public int Speed = 2;
     public string gameover = "GameOver";
     public bool stageClear;
-    public bool isCheck;
+    public bool isPause;
     public float span = 0.3f;
     public int GameOverScore;
     public string GameOverName;
-
+    public string game;
+    public int barrier;
 
 }

@@ -180,3 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemybullet: {fileID: 1322527683712756447, guid: a3dc3637934f5cf42a9e15aa841310a6, type: 3}
+  gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}

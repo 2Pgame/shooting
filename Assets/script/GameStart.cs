@@ -7,15 +7,18 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class GameStart : MonoBehaviour
 {
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
+        panel.SetActive(false);
         var button = GetComponent<Button>();
         button.enabled = true;
         button.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("InputField");
+            panel.SetActive(true);
         });
+
     }
 
     // Update is called once per frame

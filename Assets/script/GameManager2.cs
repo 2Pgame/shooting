@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,32 +17,20 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         gameSharedData.pow = 1;
-        gameSharedData.myFighter = 1;
+        gameSharedData.myFighter = 4;
         gameSharedData.playerScore = 0;
         gameSharedData.Speed = 2;
         gameSharedData.stageClear = false;
-        gameSharedData.isCheck = false;
+        gameSharedData.isPause = false;
         gameSharedData.span = 0.3f;
-        //a = true;
+        gameSharedData.barrier = 0;
+    
 
     }
     // Update is called once per frame
     void Update()
     {
-        //if ((gameSharedData.myFighter < 0 && a) || (gameSharedData.stageClear && a))
-        //{
-        //    HiScore.Instance.RankClips(hiscore1, hiscore2, hiscore3, hiscore4);
-        //    if (gameSharedData.GameOverScore > hiscore4)
-        //    {
-        //        HiScore.Instance.Add(gameSharedData.GameOverScore, gameSharedData.GameOverName);
-        //        HiScore.Instance.Sorts();
-        //    }
 
-
-        //    a = false;
-        //}
-        //HiScore.Instance.Add(gameSharedData.GameOverScore, gameSharedData.GameOverName);
-        //HiScore.Instance.Sorts();
     }
 
 }

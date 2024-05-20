@@ -5,12 +5,12 @@ public class RankingEntry
 {
     public string name;
     public int score;
-    public DateTime date;
+    public string mode;
 
-    public RankingEntry(string name, int score, DateTime date)
+    public RankingEntry(string name, int score, string mode)
     {
         this.name = name;
         this.score = score;
-        this.date = date;
+        this.mode = mode;
     }
 }
