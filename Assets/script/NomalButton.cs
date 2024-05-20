@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class NomalSelect : MonoBehaviour
+public class NomalButton : MonoBehaviour
 {
     public GameObject panel;
     public Button GameStartbutton;
@@ -27,7 +27,9 @@ public class NomalSelect : MonoBehaviour
             {
                 gameSharedData.game = "Normal";
             }
+
             SceneManager.LoadScene("InputField");
+
         });
     }
 

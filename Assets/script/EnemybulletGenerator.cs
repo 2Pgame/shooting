@@ -14,7 +14,7 @@ public class EnemybulletGenerator : MonoBehaviour
     void Start()
     {
         fighter = GameObject.Find("fighterprefab");
-        if (gameSharedData.game == "normal")
+        if (gameSharedData.game == "Normal")
         { }
         else
         {

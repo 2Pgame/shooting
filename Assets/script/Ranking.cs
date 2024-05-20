@@ -11,7 +11,7 @@ public class Ranking : MonoBehaviour
         Debug.Log(gameSharedData.playerScore);
         Debug.Log(gameSharedData.GameOverName);
         // 入力データを入れる
-        rankingManager.AddRankingEntry(gameSharedData.GameOverName,gameSharedData.playerScore);
+        rankingManager.AddRankingEntry(gameSharedData.GameOverName,gameSharedData.playerScore,gameSharedData.game);
 
 
         // UIを更新して表示

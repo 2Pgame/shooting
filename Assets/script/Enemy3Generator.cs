@@ -11,12 +11,12 @@ public class Enemy3Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameSharedData.game == "normal")
+        if (gameSharedData.game == "Normal")
         {
         }
         else
         {
-            span = 0.5f;
+            span = 0.7f;
         }
     }
 

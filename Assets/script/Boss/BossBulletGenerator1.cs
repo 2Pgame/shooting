@@ -20,7 +20,7 @@ public class BossBulletGenerator1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(gameSharedData.game == "normal")
+        if(gameSharedData.game == "Normal")
         { }
         else
         {

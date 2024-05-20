@@ -31,7 +31,7 @@ public class RankingUI : MonoBehaviour
                 RankingEntry entry = rankingEntries[i];
                 entryObject.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = entry.name;
                 entryObject.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
-                entryObject.transform.Find("Date").GetComponent<TextMeshProUGUI>().text = entry.date.ToString("yyyy/MM/dd");
+                entryObject.transform.Find("Date").GetComponent<TextMeshProUGUI>().text = entry.mode.ToString();
             }
             else
             {

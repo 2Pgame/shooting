@@ -26,7 +26,7 @@ public class HardButton : MonoBehaviour
             gameMode = GameMode.Hard;
             if (gameMode == GameMode.Hard)
             {
-                gameSharedData.game = "hard";
+                gameSharedData.game = "Hard";
             }
             SceneManager.LoadScene("InputField");
         });
