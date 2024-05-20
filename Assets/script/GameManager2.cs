@@ -16,10 +16,12 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         gameSharedData.pow = 1;
-        gameSharedData.myFighter = 0;
+        gameSharedData.myFighter = 1;
         gameSharedData.playerScore = 0;
+        gameSharedData.Speed = 2;
         gameSharedData.stageClear = false;
         gameSharedData.isCheck = false;
+        gameSharedData.span = 0.3f;
         //a = true;
 
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,13 @@ using UnityEngine.Audio;
 
 public class C_bulletGenerator : MonoBehaviour
 {
-    [SerializeField]
-    public float span = 0.5f;
     float delta = 0;
     public int pow = 2;
     float vol = -20f;
-    [SerializeField]GameSharedData sharedData;
+    public float span;
+
     [SerializeField]AudioMixer audioMixer;
+    [SerializeField] GameSharedData gameSharedData;
     // publicでクラスのインスタンスを作成
     public GameObject bulletPrefab;
     GameObject fighter;
@@ -26,7 +27,8 @@ public class C_bulletGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pow = sharedData.pow;
+        span = gameSharedData.span;
+        pow = gameSharedData.pow;
         if (pow == 1&& Input.GetButton("Fire1"))
         {
             delta += Time.deltaTime;
