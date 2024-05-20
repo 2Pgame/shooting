@@ -21,6 +21,7 @@ public class GameManager2 : MonoBehaviour
         gameSharedData.Speed = 2;
         gameSharedData.stageClear = false;
         gameSharedData.isCheck = false;
+        gameSharedData.span = 0.3f;
         //a = true;
 
     }

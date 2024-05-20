@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuickShotController : MonoBehaviour
 {
     [SerializeField]GameSharedData gameSharedData;
-
+     
  
     GameObject bulletController;
 
@@ -23,7 +23,7 @@ public class QuickShotController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-        gameSharedData.pow++;
+        gameSharedData.span -= 0.1f;
         Destroy(gameObject);
         }
     }
