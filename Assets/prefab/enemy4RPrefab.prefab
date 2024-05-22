@@ -70,7 +70,7 @@ PrefabInstance:
       addedObject: {fileID: -8585127676345843604}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: fe4515c500b0bfd41a0c34515d84c0bd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4684634019141786193}
+      addedObject: {fileID: 6358096669673114801}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: fe4515c500b0bfd41a0c34515d84c0bd, type: 3}
 --- !u!1 &778401713001631277 stripped
 GameObject:
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
-  Hp: 2
+  Hp: 6
   audio1: {fileID: 8300000, guid: f6ddf427a8107b2499b7f9d65b6d91b7, type: 3}
   audio2: {fileID: 8300000, guid: caf2aadeade0f6c47aac138da91f4c82, type: 3}
   gameSharedData: {fileID: 11400000, guid: fd850e9fd66b5e04e8068ba2afd0b57d, type: 2}
@@ -159,8 +159,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &-4684634019141786193
-PolygonCollider2D:
+--- !u!58 &6358096669673114801
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,24 +188,9 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: 1}
+  serializedVersion: 2
+  m_Radius: 1.01

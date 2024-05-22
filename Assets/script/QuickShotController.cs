@@ -23,7 +23,7 @@ public class QuickShotController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-        gameSharedData.span -= 0.1f;
+        gameSharedData.span -= 0.05f;
         Destroy(gameObject);
         }
     }
