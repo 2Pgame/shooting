@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
     float cameraMove = -0.2f;
     [SerializeField]
     GameObject Boss;
@@ -29,6 +28,14 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y > -34.0)
+        {
+            cameraMove = -0.2f;
+        }
+        else
+        {
+            cameraMove = -0.1f;
+        }
         transform.Translate(0, cameraMove * Time.deltaTime, 0);
         if (transform.position.y < -7f  && a)
         {
